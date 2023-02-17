@@ -18,7 +18,7 @@ export default function SensorAnimatedImage({ image, zindex }) {
     const sensor = useAnimatedSensor(SensorType.ROTATION);
     
     const imgStyle = useAnimatedStyle(() => {
-        const { yaw, pitch, roll } = sensor.sensor.value;
+        const { pitch, roll } = sensor.sensor.value;
         return {
             top: withTiming(interpolate(pitch, [-HALF_PI, HALF_PI], [(-IMG_OFFSET * 2) / zindex, 0]), { duration: 50 }),
             left: withTiming(interpolate(roll, [-PI, PI], [(-IMG_OFFSET * 2) / zindex, 0]), { duration: 50 }),
