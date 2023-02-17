@@ -1,10 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
+import Parallax from './src/components/Parallax';
+import SensorAnimatedImage from './src/components/SensorAnimatedImage';
+
+import bg from './assets/images/bg.jpeg';
+import layer1 from './assets/images/Parallax/1.png';
+import layer2 from './assets/images/Parallax/2.png';
+import layer3 from './assets/images/Parallax/3.png';
+import layer4 from './assets/images/Parallax/4.png';
+import layer5 from './assets/images/Parallax/5.png';
 
 export default function App() {
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Parallax layers={[layer2,layer3,layer4,layer5]}/>
       <StatusBar style="auto" />
     </View>
   );
@@ -16,5 +27,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  img: {
+    width: '100%',
+    height: '100%',
   },
 });
